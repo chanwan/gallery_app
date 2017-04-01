@@ -1,5 +1,16 @@
 class UsersController < ApplicationController
+	before_action :user_find, only: [:show]
+
+
+
 	def show
-		User.find_by(current_user.id)
+	end
+
+
+	private
+
+	
+	def user_find
+		@user = User.find_by(current_user.id)
 	end
 end

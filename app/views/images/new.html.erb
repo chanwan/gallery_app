@@ -1,0 +1,7 @@
+<h1>Create new photo</h1>
+
+<%= simple_form_for @picture do |f| %>
+  <%= f.input :name %>
+  <%= f.input :picture, as: :file %>
+  <%= f.button :submit %>
+<% end %>
