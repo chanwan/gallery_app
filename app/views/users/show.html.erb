@@ -1,5 +1,11 @@
-<h1><%= @images.name %></h1>
-<p class="photo">My photos <%= link_to 'Create new Photo', new_image_path, class: 'btn btn-default' %></p>
+<h1><%= @user.name %>
+  <%= link_to 'Edit', edit_user_registration_path(current_user), class: 'btn btn-default'%>
+</h1>
+<p class="photo">My photos 
+<% if user_signed_in? %>
+<%= link_to 'Create new Photo', new_image_path, class: 'btn btn-default' %>
+<% end %>
+</p>
 
 <table class="table">
   <thead>
@@ -15,7 +21,7 @@
     <td><%= image_tag img.picture.url %></td>
       <td><%= img.name %></td>
      <% if user_signed_in? %>>
-      <td><%= link_to 'Remove', '#' %></td>
+      <td><%= link_to 'Remove', image_path(img.id), method: :delete, data: { confirm: 'Are you sure ? ' } %></td>
       <% end %>
     </tr>
     <% end %>

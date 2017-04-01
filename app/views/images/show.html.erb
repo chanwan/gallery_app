@@ -10,7 +10,11 @@
 
 <%= simple_form_for @comment, :url => comments_path, :method => :post  do |f| %>
   <%= f.hidden_field :image_id, value: @image.id %>
-  <%= f.hidden_field :user_id, value: @image.user.id %>
+  <% if user_signed_in? %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <% else %>
+ <%= f.hidden_field :user_id, value: nil %>
+  <% end %>
   <%= f.select :mark, [1, 2, 3, 4, 5] %>
   <%= f.input :comment %>
   <%= f.button :submit %>
