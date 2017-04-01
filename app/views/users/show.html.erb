@@ -1,0 +1,19 @@
+<h1><%= current_user.name%></h1>
+<p class="photo">My photos <%= link_to 'Create new Photo', '#', class: 'btn btn-default' %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>title</th>
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+      <td>Beautiful Nature</td>
+      <td><%= link_to 'Remove', '#' %></td>
+    </tr>
+  </tbody>
+</table>

@@ -3,6 +3,7 @@
 
 .navbar-fixed-top, .navbar-fixed-bottom {
 	position: static;
+	border-bottom: 2px solid black;
 }
 
 .linkz {
@@ -12,3 +13,8 @@
 .linkz p a {
 	padding-left: 0.6em;
 }
+
+.photo {
+	font-size: 1.9em;
+}
+
