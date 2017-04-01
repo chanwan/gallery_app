@@ -1,4 +1,4 @@
-<h1><%= current_user.name%></h1>
+<h1><%= @images.name %></h1>
 <p class="photo">My photos <%= link_to 'Create new Photo', new_image_path, class: 'btn btn-default' %></p>
 
 <table class="table">
@@ -14,7 +14,9 @@
     <tr>
     <td><%= image_tag img.picture.url %></td>
       <td><%= img.name %></td>
+     <% if user_signed_in? %>>
       <td><%= link_to 'Remove', '#' %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>

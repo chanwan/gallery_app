@@ -3,6 +3,12 @@ class ImagesController < ApplicationController
 		@images = Image.all.order("created_at DESC")
 	end
 
+	def show
+		@image = Image.find(params[:id])
+		@comment = Comment.new
+		@comments = Comment.all
+	end
+
 	def new
 		@picture =current_user.images.build
 	end
@@ -12,7 +18,6 @@ class ImagesController < ApplicationController
 		if @picture.save
 			redirect_to user_path(current_user.id)
 		else
-			render 'new'
 		end
 	end
 

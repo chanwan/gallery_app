@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 
 
 	def show
-		@images = current_user.images
+
+		@images = @user.images
 	end
 
 
@@ -12,6 +13,6 @@ class UsersController < ApplicationController
 
 	
 	def user_find
-		@user = User.find_by(current_user.id)
+		@user = User.find(params[:id])
 	end
 end

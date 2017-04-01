@@ -6,8 +6,8 @@
         <%= image_tag img.picture.url(:medium), class: "img-responsive" %>
       </a>
       <div class="linkz">
-        <%= img.name %>
-        <p> By: <%= link_to img.user.name  %></p>
+        <%= link_to img.name, image_path(img) %>
+        <p> By: <%= link_to img.user.name, user_path(img.user.id)  %></p>
       </div>
     </div>
     <% end %>

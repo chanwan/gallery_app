@@ -1,0 +1,22 @@
+<div class="row">
+<h1><%= @image.user.id %></h1>
+<div class="col-md-8">
+  <%= image_tag @image.picture.url(:large), class: "img-responsive" %>
+</div>
+</div>
+
+<div class="form-padding">
+<h2>Add comment</h2>
+
+<%= simple_form_for @comment, :url => comments_path, :method => :post  do |f| %>
+  <%= f.hidden_field :image_id, value: @image.id %>
+  <%= f.hidden_field :user_id, value: @image.user.id %>
+  <%= f.select :mark, [1, 2, 3, 4, 5] %>
+  <%= f.input :comment %>
+  <%= f.button :submit %>
+<% end %>
+</div>
+
+<!-- <div class="commentz">
+  <p>By: <%= %></p>
+</div> -->
