@@ -10,10 +10,12 @@
     </tr>
   </thead>
   <tbody>
+    <% @images.each do |img| %>
     <tr>
-      <td>Mark</td>
-      <td>Beautiful Nature</td>
+    <td><%= image_tag img.picture.url %></td>
+      <td><%= img.name %></td>
       <td><%= link_to 'Remove', '#' %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>

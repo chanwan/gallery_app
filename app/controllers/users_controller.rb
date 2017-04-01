@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
 
 	def show
+		@images = current_user.images
 	end
 
 
